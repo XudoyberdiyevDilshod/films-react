@@ -1,0 +1,66 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  color: rgb(0, 2, 139);
+  border-bottom: 2px solid slategray;
+}
+
+.button {
+  padding: 5px;
+  color: floralwhite;
+  background-color: #0D6efd;
+  border: 1px solid #0D6efd;
+  border-radius: 5px;
+}
+
+.pagination {
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #0f7e7e;
+}
+
+.pagination:hover {
+  color: #fff;
+  background-color: #0D6efd;
+}
