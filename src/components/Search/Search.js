@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { MovieCard } from "../MovieCard/MovieCard";
 
 export const Search = () => {
   const [search, setSearch] = useState([]);
@@ -20,6 +21,7 @@ export const Search = () => {
         console.log(err);
       });
   };
+  console.log(search);
   return (
     <div className="text-center relative">
       <input
@@ -28,11 +30,13 @@ export const Search = () => {
         type="search"
         placeholder="Search..."
       />
-      <ul className="absolute bg-transparent max-h-[450px] overflow-auto p-2 left-0 right-0">
-        {search?.map((item) => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul>
+      <div className="container mx-auto mb-3 mt-[100px]">
+        <div className="flex justify-between flex-wrap mx-5 gap-4 font-bold text-[35px] text-center my-5">
+          {search?.map((item) => (
+            <MovieCard key={item.id} obj={item} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

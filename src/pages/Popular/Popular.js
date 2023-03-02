@@ -41,7 +41,12 @@ export const Popular = () => {
         {data.isFetched &&
           data.data.map((item) => <MovieCard key={item.id} obj={item} />)}
       </div>
-      <Pagination totalPage={data?.page} setTotalPage={setTotalPage} />
+      <Pagination
+        data={data}
+        setData={setData}
+        totalPage={data?.page}
+        setTotalPage={setTotalPage}
+      />
     </div>
   );
 };
